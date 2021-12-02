@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
+body
+{
+	margin: 0;
+	padding: 0;
+/*    background-image: url(images/back.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+#overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 2;
+	cursor: pointer;
+  }
+.navbar
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    top: 0;
+	background: transparent;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.header ul li:nth-child(1)
+{
+	animation-delay: 1s;
+}
+.header ul li:nth-child(2)
+{
+	animation-delay: 1.25s;
+}
+.header ul li:nth-child(3)
+{
+	animation-delay: 1.5s;
+}
+.header ul li:nth-child(4)
+{
+	animation-delay: 1.75s;
+}
+.header ul li:nth-child(5)
+{
+	animation-delay: 2s;
+}
+.header ul li:nth-child(6)
+{
+	animation-delay: 2.25s;
+}
+.header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	padding: 0 10%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+.header .logo
+{
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	animation: fadeIn 0.5s linear forwards;
+	animation-delay: 1s;
+}
+.header ul
+{
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+	display: flex;
+}
+.header ul li
+{
+	opacity: 0;
+	list-style: none;
+	margin: 0 10px;
+	animation: fadeInRight 0.5s linear forwards;
+}
+.header ul li:last-child
+{
+	margin-right: 0;
+}
+.header ul li a
+{
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #fff;
+	padding: 5px 10px;
+	letter-spacing: 2px;
+}
+.header ul li a.active,
+.header ul li a:hover
+{
+	background: #000;
+	color: #fff;
+}
+@keyframes fadeIn
+{
+	0%
+	{
+		opacity: 0;
+	}
+	100%
+	{
+		opacity: 1;
+	}
+}
+@keyframes fadeInRight
+{
+	0%
+	{
+		transform: translateX(150px);
+		opacity: 0;
+	}
+	100%
+	{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+.fa-bars.x2,
+.fa-times.x2{
+    font-size: 38px;
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 1280px){
+    
+    .navbar{
+        height: auto !important;
+        display: initial;
+        padding: 100px;
+        box-sizing: border-box;
+    }
+    
+}
+@media (max-width: 950px){
+    .fa-bars.x2{
+        display: block;
+    }
+    .fa-times.x2{
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        display: block;
+    }
+    .header ul{
+        position: fixed;
+        background: #fff;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: none;
+        z-index: 1010;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+    }
+    .header ul.show{
+        display: flex;
+    }
+    .header ul li{
+        margin: 10px 0;
+    }
+    .header ul li:nth-child(1)
+    .header ul li:nth-child(2)
+    .header ul li:nth-child(3)
+    .header ul li:nth-child(4)
+    .header ul li:nth-child(5)
+    .header ul li:nth-child(6)
+    {
+        animation-delay: 0s !important;
+    }
+}
+.container{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%,-50%);
+	width: 80vw;
+	font-size: 20px;
+	color: #fff;
+	opacity: 0;
+	animation: animate 0.5s linear forwards;
+	animation-delay: 2.5s;
+}
+.form{
+	justify-items: left;
+	position: relative;
+	left: 0;
+}
+.caption{
+	color: #fff;
+	font-size: 40px;
+}
+.form .form_table td{
+	padding: 20px;
+}
+.form .form_table tr{
+	padding: 25px;
+	margin: 10px;
+}
+select,input{
+	border: 0;
+	border-bottom: 1px solid #000;
+	width: 100%;
+	padding: 5px;
+	color: #000;
+}
+input[type='submit']{
+	border: 1px solid #fff;
+	padding: 10px;
+	background: transparent;
+}
+input[type='submit']:hover
+{
+	background: #000;
+	color: #fff;
+}
+.img{
+	position: relative;
+	right: -25%;
+}
+@keyframes animate {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
+body
+{
+	margin: 0;
+	padding: 0;
+	box-border-box;
+	font-family: 'PT Sans Narrow', sans-serif;
+	background-image: url(130.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.review{
+	position: absolute;
+	width: 100%
+	height: 100vh;
+	overflow: hidden;
+}
+.myform{
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	font-size: 1.5em;
+}
+.inputs{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 1s;
+}
+.inputs span{
+	padding: 0;
+	padding-right: 20px;
+}
+.buttons{
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 20px;
+	color: #000;
+}
+.buttons .btn {
+	position: fixed;
+	width: 100%
+	height: 100%
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 20;
+}
+.car_name, .model_name, .model_year, .model_review, .model_rating{
+	border: 0px;
+	border-bottom: 2px solid #000;
+	width: 300px;
+	background: transparent;
+	color: #fff;
+}
