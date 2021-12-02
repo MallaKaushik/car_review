@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Car</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="CSS_files/yes.css">
+    </head>
+    <body>
+        <section id="overlay">
+	<section class="navbar">
+		<div class="header">
+					<h2 class="logo"style="color:white;">My Logo</h2>
+					<ul id="navigation">
+						<li>
+							<a href="Project_index.php">Home</a>
+						</li>
+						<li>
+							<a href="Customer_needs.html" class="active">Customer's Choice</a>
+						</li>
+						<li>
+							<a href="about.html">About Us</a>
+						</li>
+						<li>
+							<a href="Contact.html" >Contact Us</a>
+						</li>
+						<li>
+							<a href="display.php">Reviews</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+            <div class="review">
+                <form class="myform" action="Fliter.php" method="GET">
+					<div class="inputs" ><span>Enter Budget (In Lakhs) : </span> <input type="text" name="budget"
+					placeholder="Enter Your Budget" class="car_name" id="carname" required></div>
+					<div class="inputs" style="display: none;"><span>Enter The Mileage :</span> <input type="text"
+					name="mileage" placeholder="Enter The mileage you need" class="model_name" id="modelname" required>
+					</div>
+					<div class="inputs" style="display: none;"><span>Select Transmission Type :</span>
+						<select class="model_rating" name= "type">
+							<option selected hidden value="">please select your required Type :</option>
+							<option value="manual" style="color: #000;">manual</option>
+							<option value="both" style="color: #000;">automatic</option>
+							<option value="both" style="color: #000;">both</option>
+						</select>
+						</div>
+						<div class="inputs" style="display: none;">
+							<span>Select Fuel Type :</span>
+							<select class="model_rating" name="fule" required>
+								<option value="0">please Select diesel or petrol</option>
+								<option value="diesel" style="color: #000;">diesel</option>
+								<option value="petrol" style="color: #000;">petrol</option>
+								<option value="both" style="color: #000;">both</option>
+							</select>
+							</div>
+							<div class="inputs" style="display: none;">
+								<span>Select Seating Capacity :</span>
+								<select class="model_rating" name="seating" required>
+									<option value="0">please Select Capacity</option>
+									<option value="4" style="color: #000;">4</option>
+									<option value="5" style="color: #000;">5</option>
+									<option value="6" style="color: #000;">6</option>
+								</select>
+							</div>
+							<div class="buttons" style="padding: 30px;">
+								<button class="btn" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+								<button class="btn" type="button" id="nextBtn" onclick="nextPrev(1)" style="float:right;">Next</button>
+								<input class="btn" type="submit" id="submit" style="display: none;">
+							</div>
+						</form>
+					</div>
+        </section>
+	</section>
+    </body>
+    <script type="text/javascript">
+        var currentstep=0;
+        var perv = document.getElementById('prevBtn');
+        show(currentstep);
+        function show(n){
+            var x = document.getElementsByClassName('inputs');
+            x[n].style.display="block";
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("submit").style.display="inline";
+                document.getElementById("nextBtn").style.display="none";
+            }else{
+                document.getElementById("submit").style.display="none";
+                document.getElementById("nextBtn").style.display="inline";
+            }
+        }
+        function nextPrev(n){
+            var x = document.getElementsByClassName('inputs');
+            if(n==1){
+	
+                var move = currentstep*10;
+                if(currentstep+1<x.length){
+                    x[currentstep].style.top=move+"%";
+                    x[currentstep].style.left="50%";
+                    x[currentstep].style.transform="translate(-50%, 10%)";
+                    x[currentstep+1].style.display="block";
+                }
+            }
+            if(n==-1){
+                x[currentstep-1].style.top="50%";
+                x[currentstep-1].style.left="50%";
+                x[currentstep-1].style.transform="translate(-50%,-50%)";
+                x[currentstep].style.display="none";
+            }
+            currentstep = currentstep+n;
+            show(currentstep);
+        }
+    </script>
+</html>

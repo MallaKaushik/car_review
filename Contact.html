@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<title>Car</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+                  		<link rel="stylesheet" type="text/css" href="CSS_files/Contact1.css">
+	</head>
+	<body style="background-image: url('images/back2.jpg');">
+		<section id="overlay">
+			<section class="navbar">
+				<div class="header">
+					<h2 class="logo"style="color:white;">My Logo</h2>
+					<ul id="navigation">
+						<li>
+							<a href="Project_index.php">Home</a>
+						</li>
+						<li>
+							<a href="Customer_needs.html">Customer's Choice</a>
+						</li>
+						<li>
+							<a href="about.html">About Us</a>
+						</li>
+						<li>
+							<a href="Contact.html" class="active">Contact Us</a>
+						</li>
+						<li>
+							<a href="display.php">Reviews</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="container">
+				<div class="form">
+					 <table cellpadding="20" cellspacing="30" class="form_table">
+						<form class="review_form" action="dev.php" method="POST">
+							<caption class="caption">Contact US</caption>
+							<tr class="company">
+								<td class="company_text">Title Of The Problem</td>
+								<td class="company_select">
+									<input type="text" name="title" placeholder="Enter The title of the problem" style="color: #000;">
+								</td>
+							</tr>
+							<tr class="model">
+								<td class="model_text">Enter your email address: </td>
+								<td class="model_input"><input type="text" placeholder="Enter Mail address....." name="email" style="color: #000;"></td>
+							</tr>
+							<tr class="rating">
+								<td class="rating_text">Give Your Description</td>
+								<td class="model_input"><textarea placeholder="Enter Description Here....." name="error" style="color: #000;"></textarea></td>
+							</tr>
+							<tr colspan="2" class="submit">
+								<td><input type="submit" name="submit" value="Contact us"></td>
+							</tr>
+						</form>
+					</table>
+				</div>
+			</section>
+		       </section>
+		</div>
+	</body>
+</html>
